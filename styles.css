@@ -1,0 +1,15 @@
+#container {
+  width: 80vw;
+  height: 80vh;
+  margin: auto;
+  font-size: 0;
+}
+
+.new-div {
+  display: inline-block;
+  width: 6.25%;
+  height: 6.25%;
+  background-color: red;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
