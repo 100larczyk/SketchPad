@@ -1,6 +1,15 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+
+button {
+  margin: 30px auto;
+}
+
 #container {
-  width: 80vw;
-  height: 80vh;
+  width: 960px;
+  height: 960px;
   margin: auto;
   font-size: 0;
 }
@@ -10,6 +19,6 @@
   width: 6.25%;
   height: 6.25%;
   background-color: red;
-  border: 1px solid black;
+  border: 1px black solid;
   box-sizing: border-box;
 }
