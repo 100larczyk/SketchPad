@@ -16,8 +16,8 @@ button {
 
 .new-div {
   display: inline-block;
-  width: 6.25%;
-  height: 6.25%;
+  width: auto;
+  height: auto;
   background-color: red;
   border: 1px black solid;
   box-sizing: border-box;
