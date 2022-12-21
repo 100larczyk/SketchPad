@@ -1,10 +1,20 @@
 const container = document.getElementById("container");
 const button = document.querySelector("button");
-let div = containerDiv;
+
 function createDiv() {
   const containerDiv = document.createElement("div");
 
   containerDiv.className = "new-div";
+
+  containerDiv.addEventListener("mouseover", mouseoverHandler);
+  function mouseoverHandler(e) {
+    e.target.style.backgroundColor = "blue";
+  }
+
+  containerDiv.addEventListener("mouseout", mouseoutHandler);
+  function mouseoutHandler(e) {
+    e.target.style.backgroundColor = "red";
+  }
   return containerDiv;
 }
 
@@ -27,14 +37,4 @@ function gridSizePrompt(e) {
   numbOfDivsMultiplied = numOfDivs * numOfDivs - 1;
   createMultipleDivs(numbOfDivsMultiplied);
   return;
-}
-
-container.addEventListener("mouseover", mouseoverHandler);
-function mouseoverHandler(e) {
-  e.target.style.backgroundColor = "blue";
-}
-
-container.addEventListener("mouseout", mouseoutHandler);
-function mouseoutHandler(e) {
-  e.target.style.backgroundColor = "red";
 }
