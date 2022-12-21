@@ -5,7 +5,7 @@ function createDiv() {
   const containerDiv = document.createElement("div");
 
   containerDiv.className = "new-div";
-
+  //code below activates hovering color change
   containerDiv.addEventListener("mouseover", mouseoverHandler);
   function mouseoverHandler(e) {
     e.target.style.backgroundColor = "blue";
@@ -20,21 +20,27 @@ function createDiv() {
 
 let numOfDivs;
 let numbOfDivsMultiplied;
+let myDivs = [];
+let i = 0;
 function createMultipleDivs() {
-  let myDivs = [];
-  let i = 0;
-
   for (i; i <= numbOfDivsMultiplied; i++) {
     myDivs.push(createDiv());
-    container.appendChild(myDivs[i]);
   }
 }
-createMultipleDivs();
 
 button.addEventListener("click", gridSizePrompt);
-function gridSizePrompt(e) {
+function gridSizePrompt() {
+  // Clear the container element
+  container.innerHTML = "";
+  // Reset the myDivs array
+  myDivs = [];
+  // Reset the counter variable
+  i = 0;
+
   numOfDivs = prompt("How many squares per side?");
   numbOfDivsMultiplied = numOfDivs * numOfDivs - 1;
   createMultipleDivs(numbOfDivsMultiplied);
-  return;
+
+  // Append the new div elements to the container element
+  myDivs.forEach((div) => container.appendChild(div));
 }
