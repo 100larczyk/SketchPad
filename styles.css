@@ -26,10 +26,6 @@ button {
 }
 
 .new-div {
-  display: inline-block;
-  width: 6.25%;
-  height: 6.25%;
-  background-color: red;
-  border: 1px black solid;
-  box-sizing: border-box;
+  border: 0.5px lightgrey solid;
+  background-color: white;
 }
