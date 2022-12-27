@@ -53,3 +53,5 @@ function gridSizePrompt() {
   container.style.gridTemplateColumns = `repeat(${numOfDivs}, ${cellSize}px)`;
   container.style.gridTemplateRows = `repeat(${numOfDivs}, ${cellSize}px)`;
 }
+
+const sth = 5;
