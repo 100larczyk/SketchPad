@@ -1,5 +1,7 @@
 const container = document.getElementById("container");
 const button = document.querySelector("button");
+const slider = document.querySelector(".slider-wrapper");
+const btn = document.querySelector(".btn");
 
 function createDiv() {
   const containerDiv = document.createElement("div");
@@ -11,11 +13,6 @@ function createDiv() {
     e.target.style.backgroundColor = "black";
     e.target.style.border = "none";
   }
-
-  /* containerDiv.addEventListener("mouseout", mouseoutHandler);
-  function mouseoutHandler(e) {
-    e.target.style.backgroundColor = "red";
-  }*/
 
   return containerDiv;
 }
@@ -29,22 +26,19 @@ function createMultipleDivs() {
     myDivs.push(createDiv());
   }
 }
-
-button.addEventListener("click", gridSizePrompt);
-function gridSizePrompt() {
+slider.addEventListener("input", sliderInput);
+function sliderInput() {
   // Clear the container element
   container.innerHTML = "";
   // Reset the myDivs array
   myDivs = [];
   // Reset the counter variable
   i = 0;
+  //attribute value of slider to numOfDivs
+  slider.lastElementChild.innerHTML = slider.firstElementChild.value;
+  numOfDivs = slider.firstElementChild.value;
 
-  numOfDivs = prompt("How many squares per side? (maximum 100)");
-
-  if (numOfDivs > 100) {
-    numOfDivs = 100;
-  }
-  numbOfDivsMultiplied = numOfDivs * numOfDivs - 1;
+  numbOfDivsMultiplied = numOfDivs * numOfDivs;
   createMultipleDivs(numbOfDivsMultiplied);
   // Append the new div elements to the container element
   myDivs.forEach((div) => container.appendChild(div));
@@ -53,3 +47,12 @@ function gridSizePrompt() {
   container.style.gridTemplateColumns = `repeat(${numOfDivs}, ${cellSize}px)`;
   container.style.gridTemplateRows = `repeat(${numOfDivs}, ${cellSize}px)`;
 }
+// Set the initial value of the slider to 16
+slider.firstElementChild.value = 16;
+// Call the sliderInput function to create the grid with 256 squares
+sliderInput();
+
+btn.addEventListener("click", () => {
+  slider.firstElementChild.value = 16;
+  sliderInput();
+});

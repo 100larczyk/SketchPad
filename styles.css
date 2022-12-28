@@ -29,3 +29,47 @@ button {
   background-color: white;
   border: 0.5px lightgrey solid;
 }
+
+.slider-wrapper {
+  position: relative;
+  margin: 1re;
+}
+
+.slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 150px;
+  height: 10px;
+  background-color: white;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0, 4);
+  border-radius: 25px;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: radial-gradient(#85dcf7, rgb(10, 10, 134));
+}
+
+.slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(#85dcf7, rgb(10, 10, 134));
+}
+
+.slider-wrapper span {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  margin-left: 20px;
+  font-size: 2rem;
+}
