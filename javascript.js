@@ -1,7 +1,6 @@
 const container = document.getElementById("container");
-const button = document.querySelector("button");
 const slider = document.querySelector(".slider-wrapper");
-const btn = document.querySelector(".btn");
+const reset = document.querySelector(".reset");
 const rgb = document.querySelector(".rgb");
 const black = document.querySelector(".black");
 const chooseColor = document.querySelector("#color");
@@ -55,9 +54,13 @@ function sliderInput() {
   container.style.gridTemplateRows = `repeat(${numOfDivs}, ${cellSize}px)`;
 }
 
-btn.addEventListener("click", () => {
-  slider.firstElementChild.value = 16;
-  sliderInput();
+//
+reset.addEventListener("click", () => {
+  let val = document.querySelector(".slider").value;
+  let cell = container.children;
+  for (let i = 0; i < val * val; i++) {
+    cell[i].style.backgroundColor = "white";
+  }
 });
 
 //generates random color for cell
